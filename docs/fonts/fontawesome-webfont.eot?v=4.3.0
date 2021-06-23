@@ -1,0 +1,209 @@
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.fitvids=f()}})(function(){var define,module,exports;return function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s}({1:[function(require,module,exports){"use strict";var selectors=['iframe[src*="player.vimeo.com"]','iframe[src*="youtube.com"]','iframe[src*="youtube-nocookie.com"]','iframe[src*="kickstarter.com"][src*="video.html"]',"object"];var css=".fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}";module.exports=function(selector,opts){opts=opts||{};selector=selector||"body";if(isObject(selector)){opts=selector;selector="body"}var containers=queryAll(selector);if(containers.length<1)return;if(!document.getElementById("fit-vids-style")){var head=document.head||document.getElementsByTagName("head")[0];head.appendChild(styles())}var customSelector=toSelector(opts.players);var videoSelector=toSelector(selectors);if(customSelector.length){videoSelector=videoSelector+","+customSelector}containers.forEach(function(container){queryAll(container,videoSelector).forEach(wrap)})};function queryAll(el,selector){if(typeof el==="string"){selector=el;el=document}return Array.prototype.slice.call(el.querySelectorAll(selector))}function wrap(el){if(/fluid-width-video-wrapper/.test(el.parentNode.className))return;var widthAttr=parseInt(el.getAttribute("width"),10);var heightAttr=parseInt(el.getAttribute("height"),10);var width=!isNaN(widthAttr)?widthAttr:el.clientWidth;var height=!isNaN(heightAttr)?heightAttr:el.clientHeight;var aspect=height/width;el.removeAttribute("width");el.removeAttribute("height");var wrapper=document.createElement("div");el.parentNode.insertBefore(wrapper,el);wrapper.className="fluid-width-video-wrapper";wrapper.style.paddingTop=aspect*100+"%";wrapper.appendChild(el)}function toSelector(input){if(typeof input==="undefined")return"";return Array.isArray(input)?input.join():input}function styles(){var div=document.createElement("div");div.innerHTML='<p>x</p><style id="fit-vids-style">'+css+"</style>";return div.childNodes[1]}function isObject(input){return Object.prototype.toString.call(input)==="[object Object]"}},{}]},{},[1])(1)});HTTP/1.1 200 OK
+Server: nginx/1.10.3 (Ubuntu)
+Date: Wed, 23 Jun 2021 12:48:01 GMT
+Content-Type: image/svg+xml
+Content-Length: 519
+Connection: keep-alive
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 22 Jun 2021 11:37:28 GMT
+ETag: W/"207-17a3382cfe5"
+
+<svg height="1024" width="896" xmlns="http://www.w3.org/2000/svg">
+  <path d="M128 768h256v64H128v-64z m320-384H128v64h320v-64z m128 192V448L384 640l192 192V704h320V576H576z m-288-64H128v64h160v-64zM128 704h160v-64H128v64z m576 64h64v128c-1 18-7 33-19 45s-27 18-45 19H64c-35 0-64-29-64-64V192c0-35 29-64 64-64h192C256 57 313 0 384 0s128 57 128 128h192c35 0 64 29 64 64v320h-64V320H64v576h640V768zM128 256h512c0-35-29-64-64-64h-64c-35 0-64-29-64-64s-29-64-64-64-64 29-64 64-29 64-64 64h-64c-35 0-64 29-64 64z" />
+</svg>
+HTTP/1.1 404 Not Found
+Server: nginx/1.10.3 (Ubuntu)
+Date: Wed, 23 Jun 2021 12:48:01 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 6184
+Connection: keep-alive
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+ETag: W/"1828-58XCu6kuPH4kjiuVlne7BM8Cb8c"
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> GS template AdventHymnals</title>
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="shortcut icon" href="https://adventhymnals.org/favicon.ico">
+  <link rel="stylesheet" href="https://adventhymnals.org/styles/uf_style.css">
+  <link rel="stylesheet" href="https://adventhymnals.org/styles/cstyle.css">
+  <link rel="stylesheet" href="https://adventhymnals.org/styles/theme.css">
+
+  
+
+</head>
+
+<body class="searchbox-hidden">
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=156811091033253&autoLogAppEvents=1"
+    nonce="mJ0CLUlq"></script>
+
+  <div class="wrapper">
+    <div class="navbar-fixed" id="nav-main">
+      <nav class="custom">
+        <div class="nav-wrapper" style="background-color: #52372A;">
+          <a href="https://adventhymnals.org/" class="brand-logo"
+            style="padding-left: 2rem; text-transform: uppercase;font-size: 1.4em;">AdventHymnals</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down" id="headerLinks">
+            <span id="nav-social">
+              <li class="fa-stack"><a href="https://github.com/gospelsounders" target="_blank"><i
+                    class="fa fa-circle fa-stack-2x"></i><i class="fa fa-github fa-stack-1x"></i></a></li>
+            </span>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <nav id="sidebar" style="background-color:#8A5E3B; color: #fff;">
+      <div id="header-wrapper">
+        <div id="header" style="background-color:#8A5E3B !important;;">
+          <a id="logo" href="#"><span class="logo-title" style="font-size: 1.4em;"> AdventHymnals</span>
+          </a>
+          <form class="searchbox" action="https://adventhymnals.org/">
+            <label for="search-by"><i class="fa fa-search"></i></label>
+            <input type="search" search name="search" id="search" value=""
+              placeholder="">
+            <span data-search-clear><i class="fa fa-close"></i></span>
+          </form>
+          <div id="mobile-nav">
+            <a href="https://github.com/gospelsounders" target="_blank">Github</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="scrollbar-inner">
+        <div class="highlightable">
+          <ul class="topics">
+
+
+
+
+
+          </ul>
+          <hr />
+
+          <a class="padding" href="#" data-clear-history-toggle><i class="fa fa-fw fa-history"></i> Clear
+            History</a><br />
+
+          <section id="footer">
+            <p>Built with <a href="http://csycms.csymapp.com">csyms</a> - A Flat File CMS for node</p>
+            <p>
+            <p>Copyright &copy; 2018 - 2021 <a
+                href="http://www.gospelsounders.org">Gospel Sounders</a> </p>
+            </p>
+          </section>
+        </div>
+      </div>
+    </nav>
+
+
+    <section id="body">
+      <div id="overlay"></div>
+
+      <div class="padding highlightable">
+        <a href="#" id="sidebar-toggle" data-sidebar-toggle><i class="fa fa-2x fa-bars"></i></a>
+        <div id="top-bar">
+
+
+          <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <br>
+            
+            <a class="fb-share-c" target="_blank"
+              href="https://www.facebook.com/sharer/sharer.php?u=&amp;src=sdkpreparse"
+              style="text-decoration: none; float:right;">
+              <i class="a-icon fa fa-share"></i>Share
+            </a>
+          </div>
+          
+<div class="error">
+  <h1>404</h1>
+  <p>Sorry, this is not the page you are looking for. It is highly unlikely that this is our fault.</p>
+</div>
+
+
+
+        </div>
+        <div id="navigation">
+          
+
+          
+        </div>
+
+    </section>
+
+
+    <div id="content">
+      <!-- End of content -->
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://adventhymnals.org/lib/jquery/dist/jquery.min.js"></script>
+  <script src="https://adventhymnals.org/lib/popper.js/dist/umd/popper.min.js"></script>
+  <script src="https://adventhymnals.org/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="https://adventhymnals.org/lib/highlightjs/highlight.pack.min.js"></script>
+  <script src="https://adventhymnals.org/lib/fitvids/fitvids.min.js"></script>
+  <script src="https://adventhymnals.org/lib/masonry-layout/dist/masonry.pkgd.min.js"></script>
+  <script src="https://adventhymnals.org/scripts/ghostdown.js"></script>
+  <script src="https://adventhymnals.org/scripts/raneto.js"></script>
+  <script src="https://adventhymnals.org/scripts/uf.js"></script>
+
+  <!-- Popper.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous">
+    </script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      alert(config)
+      // $('.fb-share-c').attr('href', 'hrf..')
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+        $('body').toggleClass('sidebar-hidden');
+        $(this).toggleClass('active');
+      });
+      $('#sidebarCollapse').on('click', function () {
+        $('body').toggleClass('sidebar-hidden');
+      });
+      $('[data-search-clear]').on('click', function () {
+        $('[search]').val('').trigger('input');
+        sessionStorage.removeItem('search-input');
+      });
+      $('#data-search-clear').on('click', function () {
+        $('[search]').val('').trigger('input');
+        sessionStorage.removeItem('search-input');
+      });
+
+      $('.tabs-wrapper > ul a[rel="tab"]').click(function (event) {
+        event.preventDefault();
+        $(this).parent().siblings().removeClass("current");
+        $(this).parent().addClass("current");
+        var tab = $(this).attr("href");
+        $(tab).siblings().css('display', 'none');
+        $(tab).fadeIn()
+      })
+    });
+
+  </script>
+
+</body>
+
+</html>
