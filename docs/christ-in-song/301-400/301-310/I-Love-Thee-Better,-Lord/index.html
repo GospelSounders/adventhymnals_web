@@ -5,11 +5,11 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> GS template fetching headers - AdventHymnals</title>
+  <title> GS template 301. I Love Thee Better, Lord - AdventHymnals</title>
   <meta name="description" content="[object Object]" />
 
-  <meta name="keywords" content="[object Object]" />
-  <meta name="author" content="[object Object]" />
+  <meta name="keywords" content="Christ in Song, I Love Thee Better, Lord, I know I love thee better, Lord, The half has never yet been told" />
+  <meta name="author" content="Brian Onang&#39;o" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -108,17 +108,20 @@
 
 
           <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-            <a href="/Tools" itemprop="url"><span itemprop="title">Tools</span></a>
+            <a href="/christ-in-song" itemprop="url"><span itemprop="title">Christ in Song</span></a>
             <i class="fa fa-angle-right"></i>
-            <a href="/Tools/church-hymnal" itemprop="url"><span itemprop="title">church hymnal tools and resources</span></a>
+            <a href="/christ-in-song/301-400" itemprop="url"><span itemprop="title">Christ in Song - 301-400</span></a>
             <i class="fa fa-angle-right"></i>
-            <span itemprop="title">fetching headers</span>
+            <span itemprop="title">Christ in Song - 301-310</span>
             
             <a class="fb-share-c" target="_blank"
-              href="https://www.facebook.com/sharer/sharer.php?u=https://dev.site.adventhymnals.org/Tools/church-hymnal/fetching-headers&amp;src=sdkpreparse"
+              href="https://www.facebook.com/sharer/sharer.php?u=https://dev.site.adventhymnals.org/christ-in-song/301-400/301-310/I-Love-Thee-Better,-Lord&amp;src=sdkpreparse"
               style="text-decoration: none; float:right;">
               <i class="a-icon fa fa-share"></i>Share
             </a>
+            <div class="toc">
+              <ol data-toc="body" data-toc-headings="h2, h3"></ol>
+            </div>
           </div>
           
 <div class="row">
@@ -129,39 +132,136 @@
 
 
 
-      <h2>Fetching Headers</h2>
-<p>Headers are such details as are defined under the <a href="%7B%7B%7Bcself-%7D%7D%7D/adventhymnals#structure">structure</a> section.</p>
-<p>These, which are found in the respective pdfs (<a href="/resources/1941-sda-hymnal-1.pdf">1941 church hymnal pdf</a>, etc), can be scraped from <a href="https://hymnary.org/hymn/CHSD1941/1">hymnary.org</a>. The scripts for doing this are found in the <a href="https://github.com/GospelSounders/adventhymnals/tree/master/tools/headers">tools/headers</a> directory.</p>
-<p>Running <code>index.js</code> will create 2 files having header data for both <a href="https://hymnary.org/hymn/CSR1908/1">Christ in Song</a> and <a href="https://hymnary.org/hymn/CHSD1941/1">Church hymnal</a> respectively.</p>
-<p>This might be dropped here for reference:</p>
-<pre><code class="language-javascript">titleCase  = (str) =&gt; {
-  return str.replace(/([A-Z])([A-Z]+)([^A-Z]+)/g, function(match, $1, $2, $3){return $1+$2.toLowerCase() + $3})
-}
+      <h2>301. I LOVE THEE BETTER, LORD</h2>
+<pre><code class="language-txt">1.
+I know I love thee better, Lord,
+Than any earthly joy;
+For thou hast given me the peace
+Which nothing can destroy.
+
+Chorus:
+The half has never yet been told,
+Of love so full and free;
+The half has never yet been told,
+The blood it cleanseth me.
+
+2.
+I know that thou art nearer still
+Than any earthly throng;
+And sweeter is the tho't of thee
+Than any lovely song. 
+
+Chorus:
+The half has never yet been told,
+Of love so full and free;
+The half has never yet been told,
+The blood it cleanseth me.
+
+
+3.
+Thou hast put gladness in my heart;
+Then may I well be glad;
+Without the secret of thy love 
+I could not but be sad. 
+
+Chorus:
+The half has never yet been told,
+Of love so full and free;
+The half has never yet been told,
+The blood it cleanseth me.
+
+
+4.
+O Saviour, precious Saviour, mine!
+What will thy presence be,
+If such a life of joy can crown
+Our walk on earth with thee? 
+
+Chorus:
+The half has never yet been told,
+Of love so full and free;
+The half has never yet been told,
+The blood it cleanseth me.
+
 </code></pre>
-<h2>Initial Edits</h2>
-<h3>Missing Numbers</h3>
-<p>Data for some hymns are missing in the data provided by hymnary. For these to be added, it is required, first, that the missing numbers be identified. This is done by running <code>missingNumbers.js</code> which is also found in the <a href="https://github.com/GospelSounders/adventhymnals/tree/master/tools/headers">tools/headers</a> directory.</p>
-<p>Once the list of missing numbers is found, run <code>enterMissinginformation.js</code>, which is found in the same directory, which will guide you through to see that you enter the missing information in the required format to avoid breaking any part of what has been done so far.</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>#389 is missing in Christ in Song 1908 Edition</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<h3>Authors</h3>
-<p>To form an index of authors/poets and composers, it is required that the name of a single person appearing in different hymns be consistent in its format. This is not the case with the data we have so far. To be able to fix this, first it is required that all hymns have their authors/poets and composers/arrangers listed. To check if all hymns have these run the following: <code>checkMissing.js</code> and follow the prompts till everything is fixed.</p>
-<p>Some important header information is not contained in the data extracted from hymnary. These are obtained from the respective pdfs (<a href="/resources/1941-sda-hymnal-1.pdf">1941 church hymnal pdf</a>, etc)</p>
-<h3>Titles and First Lines</h3>
-<p><code>sort -o &quot;CHSD1941Title&amp;FirstLines&quot; &quot;CHSD1941Title&amp;FirstLines&quot;</code></p>
-<pre><code>(.*)([0-9][0-9][0-9],)\n    $2$1\n
-( [_\.]+ )\n  \n
-\n([0-9]+)( .*)([0-9]{3})(.*)   \n$3 $2\n$1$4
-</code></pre>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title</td>
+<td>I Love Thee Better, Lord</td>
+</tr>
+<tr>
+<td>Key</td>
+<td>C Major</td>
+</tr>
+<tr>
+<td>Titles</td>
+<td>The half has never yet been told</td>
+</tr>
+<tr>
+<td>First Line</td>
+<td>I know I love thee better, Lord</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>F. R. Havergal</td>
+</tr>
+<tr>
+<td>Year</td>
+<td>1908</td>
+</tr>
+<tr>
+<td>Composer</td>
+<td>R. E. Hudson</td>
+</tr>
+<tr>
+<td>Hymnal</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tune</td>
+<td>I know I love thee better, Lord</td>
+</tr>
+<tr>
+<td>Metrical pattern</td>
+<td></td>
+</tr>
+<tr>
+<td># Stanzas</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Chorus</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Chorus Type</td>
+<td>chorus</td>
+</tr>
+<tr>
+<td>Subjects</td>
+<td>Christ: Christ Precious</td>
+</tr>
+<tr>
+<td>Texts</td>
+<td></td>
+</tr>
+<tr>
+<td>Print Texts</td>
+<td></td>
+</tr>
+<tr>
+<td>Scripture Song</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
      
       <div class="page-meta clearfix">
@@ -169,7 +269,7 @@
             <span class="glyphicon glyphicon-envelope"></span> Need help? <a href="mailto:editor@gospelsounders.org">Get in touch!</a>
           </div>
         <div class="last-updated float-right">
-          Last updated on 22nd Jun 2021  by [object Object]
+          Last updated on 22nd Jun 2021  by Brian Onang&#39;o
         </div>
       </div>
 
@@ -182,10 +282,10 @@
 
         </div>
         <div id="navigation">
-          <a class="nav nav-prev" href=/Tools/church-hymnal> <i
+          <a class="nav nav-prev" href=/christ-in-song/301-400/301-310> <i
               class="fa fa-chevron-left"></i></a>
 
-          <a class="nav nav-next" href=/Music-Theory><i
+          <a class="nav nav-next" href=/christ-in-song/301-400/301-310/No-Other-Name><i
               class="fa fa-chevron-right"></i></a>
         </div>
 
