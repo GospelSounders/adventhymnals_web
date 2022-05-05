@@ -1,4 +1,0 @@
-User-agent: * 
-Disallow: 
-Allow: / 
-Sitemap: https://dev.site.adventhymnals.org/sitemap.xml 
